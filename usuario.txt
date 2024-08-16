@@ -1,0 +1,16 @@
+{
+    "username": "marilyn87",
+    "email": "houstonian@example.com",
+    "password": "#UY7kG_gT@",
+    "address": "648 Johnson Circles Apt. 789",
+    "full_name": "Monique DavisJarvis",
+    "telephone": "655-401-9817x019",
+    "city": "Arthurmouth",
+    "country": "US",
+    "province": "US-MD",
+    "postcode": "34432",
+    "card_number": "4504255581737007",
+    "expiration_date": "12/28",
+    "cvv": "391",
+    "payment": "Credit Card"
+}
