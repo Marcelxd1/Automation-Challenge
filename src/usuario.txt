@@ -1,0 +1,16 @@
+{
+    "username": "jasongriffith",
+    "email": "jimenezsteven@example.com",
+    "password": "O0Cbx_Oy#9",
+    "address": "7238 Brewer Divide",
+    "full_name": "Thomas RiggsWoods",
+    "telephone": "599-635-0909",
+    "city": "Melissastad",
+    "country": "US",
+    "province": "US-MD",
+    "postcode": "70240",
+    "card_number": "4382717560484379",
+    "expiration_date": "09/30",
+    "cvv": "977",
+    "payment": "Credit Card"
+}

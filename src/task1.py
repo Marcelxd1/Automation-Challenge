@@ -81,7 +81,7 @@ def test_automation():
         final_page.verify_item()
 
 
-        print("SUCCESS ORDER")
+        print("SUCCESSFUL ORDER")
         time.sleep(10)
 
     
