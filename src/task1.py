@@ -8,12 +8,16 @@ from utils.random_data import generate_user_data
 from pages.final_page import FinalPage
 import random
 import json
+import os
+
 
 
 import time
 
 def save_user_data(user_data, filename="usuario.txt"):
-    with open(filename, 'w') as file:
+
+    filepath = os.path.join("src", filename)
+    with open(filepath, 'w') as file:
         json.dump(user_data, file, indent=4)
 
 def test_automation():
@@ -78,7 +82,7 @@ def test_automation():
 
 
         print("SUCCESS ORDER")
-        time.sleep(15)
+        time.sleep(10)
 
     
     finally:
