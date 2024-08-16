@@ -1,14 +1,34 @@
 # Automation-Challenge
 
-## TASk 1:
+This project contains automated tests for a purchasing process on a website using Selenium WebDriver. The tests are responsible for verifying the correct functionality of the purchase flow, including payment method selection and validation of entered data.
 
-Este proyecto contiene pruebas automatizadas para un proceso de compra en un sitio web utilizando Selenium WebDriver. Las pruebas se encargan de verificar el correcto funcionamiento del flujo de compra, incluyendo la selección de métodos de pago y la validación de los datos ingresados.
+## Project Structure
 
-### Estructura del Proyecto
+-   task1.py: Main script that runs the automated tests for the first exercise.
+-   task2.py: Main script that runs the automated tests for the second exercise.
+-   task3.md: Contains the solution to question 3.
+-   requirements.txt: File with the dependencies needed to run the project.
+-   pages/: Contains the classes representing the different pages of the purchase flow (task 1).
+-   utils/: Contains helper functions, such as user data generation (task 1).
 
--   `test.py`: Script principal que ejecuta las pruebas automatizadas.
--   `requirements.txt`: Archivo con las dependencias necesarias para ejecutar el proyecto.
--   `pages/`: Contiene las clases que representan las diferentes páginas del flujo de compra.
--   `utils/`: Contiene funciones auxiliares, como la generación de datos de usuario.
+You should clone the repository, install the dependencies from requirements.txt in your virtual environment
 
-Se deberá clonar el repositorio instalas las dependencias del requirements.txt y ejecutar el archivo principal test.py
+### TASK 1
+
+-   Run de task1.py
+
+```bash
+python src/task1.py
+```
+
+### TASK 2
+
+-   Run de task2.py
+
+```bash
+python src/task2.py
+```
+
+### TASK 3
+
+-   Review the content of the `task3.md` file for the solution to Task 3.

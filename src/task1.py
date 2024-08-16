@@ -15,7 +15,7 @@ import os
 import time
 
 def save_user_data(user_data, filename="usuario.txt"):
-
+    # Save random user data in txt
     filepath = os.path.join("src", filename)
     with open(filepath, 'w') as file:
         json.dump(user_data, file, indent=4)
@@ -42,7 +42,7 @@ def test_automation():
         time.sleep(2)
         
 
-        # Regsiter
+        # Register
         login_page = LoginPage(driver)
         login_page.create_account()
         login_page.register_user(user_data)

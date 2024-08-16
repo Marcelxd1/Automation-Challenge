@@ -49,26 +49,27 @@ class PurchasePage:
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.NAME, "address[full_name]"))
         ).send_keys(user_data["full_name"])
+        # Fill the inputs
         self.driver.find_element(By.NAME, "address[telephone]").send_keys(user_data["telephone"])
         self.driver.find_element(By.NAME, "address[address_1]").send_keys(user_data["address"])
         self.driver.find_element(By.NAME, "address[city]").send_keys(user_data["city"])
         self.driver.find_element(By.NAME, "address[postcode]").send_keys(user_data["postcode"])
 
-
+        # Select the country
         country_dropdown = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.ID, "address[country]"))
         )
         select = Select(country_dropdown)
         select.select_by_value(user_data["country"])
 
-
+        # Select the province
         province_dropdown = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.ID, "address[province]"))
         )
         select_p = Select(province_dropdown)
         select_p.select_by_value(user_data["province"])
 
-
+        # Select radio button
         radio_button = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, '//*[@id="checkoutShippingAddressForm"]/div[1]/div[6]/div/div/div/div[1]/label'))
         )
@@ -79,13 +80,14 @@ class PurchasePage:
         pay_button = self.driver.find_element(By.XPATH, '//*[@id="checkoutShippingAddressForm"]/div[2]/button')
         pay_button.click()
 
+        # Select visa option
         WebDriverWait(self.driver, 15).until(
             EC.presence_of_element_located((By.XPATH, '(//div[@class="flex justify-start items-center gap-1"]/*/*[name()="svg"])[3]'))
         )
         visa_option = self.driver.find_element(By.XPATH, '(//div[@class="flex justify-start items-center gap-1"]/*/*[name()="svg"])[3]')
         visa_option.click()
 
-
+        # Click on success to get correct card information 
         WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '//*[@id="checkoutPaymentForm"]/div[3]/div[3]/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/div[2]/button[1]'))
         )
@@ -96,13 +98,14 @@ class PurchasePage:
             EC.presence_of_element_located((By.XPATH, '//*[@id="checkoutPaymentForm"]/div[3]/div[3]/div/div/div/div[2]/div/div/div/div/div[1]/div[1]/div/div[2]'))
         )
 
+        # Fill card inputs
         card_number_element = self.driver.find_element(By.XPATH, "//div[contains(text(), 'Test card number')]")
         card_number = card_number_element.text.split(": ")[1]
         card_expiry_element = self.driver.find_element(By.XPATH, "//div[contains(text(), 'Test card expiry')]")
         card_expiry = card_expiry_element.text.split(": ")[1] # DAte error ----
         card_cvc_element = self.driver.find_element(By.XPATH, "//div[contains(text(), 'Test card CVC')]")
         card_cvc = card_cvc_element.text.split(": ")[1] 
-        card_expiry = "0425"
+        card_expiry = "0425" #had to change the year
 
         iframes = self.driver.find_elements(By.TAG_NAME, 'iframe')
         for i, iframe in enumerate(iframes):
@@ -126,7 +129,7 @@ class PurchasePage:
         self.driver.switch_to.default_content()
         time.sleep(5)
         
-        
+        # Complete the purchase
         order_button = self.driver.find_element(By.XPATH, '//*[@id="checkoutPaymentForm"]/div[5]/button')
         order_button.click()
         WebDriverWait(self.driver, 10).until(
